@@ -1,0 +1,237 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons">
+<%# <div id="state" data-ids="">  %>
+
+<p id="current-user" style= "display:none;"> <%= current_user.id %> </p>
+
+<div id="state" class="container text-left" data-ids=""> 
+
+<div class="container my-4">
+<div class="row justify-left-center">
+ <section class="col-12 col-lg-8" id="search">
+<div class="card-custom">
+ <form id="search-form">
+                <div class="input-group">
+                  <input class="form-control" id="search-input" type="text" placeholder="Trouver une activité">
+                  <label for="search-input" id="search-label"><span class="material-icons">search</span></label>
+                  <input class="btn btn-primary" type="submit" value="Rechercher" id="search-btn">
+                </div>
+              </form>
+  <ul id="results" class="list-inline"></ul>
+
+  </div>
+  </section>
+  </div>
+    
+
+          <div class="row justify-left-center">
+          <section class="col-12 col-lg-8 col-xl-4 mt-4" id="codenafs">
+            <div class="card-custom">
+              <form id="codenaf">
+                <div class="input-group">
+                  <input class="form-control" id="search-naf" type="text" placeholder="Trouver un NAF">
+                  <label for="codenaf-input" id="codenaf-label"><span class="material-icons">work</span></label>
+                  <input class="btn btn-primary" type="submit" value="Rechercher" id="codenaf-btn">
+                </div>
+              </form>
+              <ul class="list-inline " id="nafs"></ul>
+              </div>
+          </section>
+        
+        
+          <section class="col-12 col-lg-8 col-xl-4 mt-4" id="geography">
+            <div class="card-custom">
+              <div id="geography-header">
+                <h4 class="display-6">Critère géographique</h4>
+              </div>
+              <ul id="geos" class="list-inline"></ul>
+                          </div>
+          </section>
+        </div>
+
+               <div class="row justify-left-center">
+          <section class="col-12 col-lg-8 col-xl-4 mt-4" id="effectif">
+            <div class="card-custom">
+              <div id="effectif-header">
+                <h4 class="display-6">Critère effectif</h4>
+              </div>
+
+
+         <ul id="effectifs" class="list-inline"></ul>
+            </div>
+          </section>
+
+
+  
+
+            <section class="col-12 col-lg-8 col-xl-4 mt-4" id="ca">
+            <div class="card-custom">
+              <div id="ca-header">
+                <h4 class="display-6">Critère chiffre d'affaire</h4>
+              </div>
+
+ <ul id="cas" class="list-inline"></ul>
+                     </div>
+          </section>
+        </div>
+        <div class="row justify-left-center">
+          <hr class="col-12 col-lg-6 my-4 d-lg-none">
+        </div>
+      </div>
+
+      <section id="panier-count">
+        <%# <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-4"> %>
+              <div class="card-custom card-green">
+                <div id="panier">
+                  <div id="panier-header">
+                    <h4 class="display-6">Votre ciblage</h4>
+                    <div class="hr-custom"><hr></div>
+                  </div>
+                  <%# <p id="panier-target">Vous avez séléctionné les <strong>Médecins</strong>, <strong>Infirmers</strong> et <strong>Urgentistes</strong>, en <strong>Bretagne</strong> et en <strong>Corse</strong>, ayant moins de <strong>20 employés</strong> et ayant un chiffre d'affaire entre <strong>25 000€</strong> et <strong>100 000€</strong>.</p> %>
+                </div>
+                <div class="h_line"></div>
+                <div><div class="hr-custom"><hr></div><h6><u>Votre potentiel de sociétés est de</u> <strong id="count"></strong></h6> </div>
+                <div class="mt-4" id="counter">
+                <button class="btn btn-outline-light" id="comptage">Calculer le potentiel</button>
+                  <p id="count"></p>
+                </div>
+              <%# </div>
+            </div>
+          </div> %>
+        </div>
+      </section>
+
+
+      <div class="container">
+        <div class="row justify-left-center">
+          <hr class="col-12 col-lg-6 my-4">
+          <section class="col-12 col-lg-8" id="sample">
+            <div class="card-custom">
+              <div id="sample-header">
+                <h4 class="display-6">Echantillon</h4>
+                <div class="ms-2" id="sample-action">
+                  <button class="btn btn-primary" id="echantillon"> Générer un échantillon</button>
+                </div>
+              </div>
+              <div>--Raison social--Adresse</div>
+              <div id="samples">
+              </div>
+          </section>
+
+                    <hr class="col-12 col-lg-6 my-4">
+          <section class="col-12 col-lg-8 mb-5 pb-5" id="dl">
+          
+            <div class="d-flex justify-content-center">
+            <% if current_user.subscription_status == "active" %>
+              <button class="btn btn-primary btn-lg" id="download">1-Générer le fichier cible</button>
+              
+              <button class="btn btn-primary btn-lg" id="refresh">2-voir le lien de téléchargement</button>
+   <% else %>
+
+   <button class="btn btn-primary btn-lg" href="https://buy.stripe.com/test_dR65lpcBy6JAbg46oo" id="refresh">souscrire à un abonnement</button>
+ 
+   
+              <% end %> 
+            </div>
+
+          
+            <div class="d-flex justify-content-center mt-3">
+              <div id="jobs">
+                <p><a class="d-flex justify-content-center align-items-center text-decoration-none" href="#"><span class="material-icons me-2">download</span>Fichier-04-11-2021.rar</a></p>
+                  <div>
+                 status
+
+                <ul id="status" class="list-inline"></ul>
+                 </div>
+              
+              </div>
+            </div>
+          </section>
+
+          </div>
+      </div>
+    </div>
+
+  <%# <div class="row">
+    <div class="col-6">
+      <form class="form-inline" id="search-form">
+        <input type="text" class="form-control" placeholder="Find cpy" id="search-input">
+        <input type="submit" class="btn btn-primary">
+      </form>
+      <ul id="results" class="list-inline"></ul>
+    </div> %>
+
+    <%# <div class="col-6">
+      <div id="panier" class="cadre">
+          >>>> votre ciblage
+      </div> 
+      
+      
+    </div> %>
+  <%# </div> %>
+
+  <%# <div>
+  <form class="form-inline" id="codenaf">
+          <input type="text" class="form-control" placeholder="Find Nafs" id="search-naf">
+          <input type="submit" class="btn btn-primary">
+        </form>
+        <ul id="nafs" class="list-inline"></ul>
+  </div> %>
+
+  <%# <div>
+    critère effectif
+
+    <ul id="effectifs" class="list-inline"></ul>
+  </div>
+
+
+  <div>
+    critère géographique 
+
+    <ul id="geos" class="list-inline"></ul>
+  </div>
+
+  <div>
+    critère chiffre d'affaire
+
+    <ul id="cas" class="list-inline"></ul>
+  </div> %>
+
+
+  <%# <div>
+    comptage
+
+    <ul id="count" class="list-inline"></ul>
+  </div>
+
+    <div>
+    echantillon
+
+    <ul id="samples" class="list-inline"></ul>
+  </div>
+
+    <div>
+    status
+
+    <ul id="status" class="list-inline"></ul>
+  </div>
+
+  <div>
+    <button id="download" class="btn btn-gradient" href="#"> telecharger </button>
+
+    <button id="comptage" class="btn btn-gradient" href="#"> comptage </button>
+
+    <button id="echantillon" class="btn btn-gradient" href="#"> echantillon </button>
+  </div> %>
+</div>
+<br>
+<br>
+<br>
+<br>

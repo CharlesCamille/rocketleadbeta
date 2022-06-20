@@ -1,0 +1,269 @@
+#experts .ring, #presentation, #hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.demarrer {
+background-color: blue;
+}
+
+
+h5{
+  color:#106ec1;
+  font-weight: bold;
+}
+
+.captcha {
+  border-color: #de7A71;
+  color: #d45348;
+  background: #2564cc;
+}
+
+
+#tarifs .tarif, #presentation .card-info, .btn-primary, .btn-danger {
+  border-radius: 0.3rem;
+}
+
+#tarifs .tarif .btn, #tarifs .tarif.recommanded .recommand {
+  border-radius: 0.6rem;
+}
+
+.btn-danger {
+  background-color: #de7A71;
+  border-color: #de7A71;
+}
+.btn-danger:hover {
+  background-color: #d45348;
+  border-color: #d45348;
+}
+
+.btn-primary {
+  background-color: #4f91ff;
+  border-color: #4f91ff;
+}
+.btn-primary:hover {
+  background-color: #1c71ff;
+  border-color: #1c71ff;
+}
+
+#hero {
+  position: relative;
+  background-color: #4f91ff;
+  min-height: 100vh;
+  color: #ffffff;
+}
+#hero .container {
+  z-index: 2;
+ 
+}
+
+#hero .btn-link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#presentation {
+  text-align: left;
+}
+#presentation .btn-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #de7A71;
+  padding-left: 0;
+  padding-right: 0;
+}
+#presentation .card-info {
+  background-color: #e5f5f5;
+  padding: 16px 4px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  text-align: center;
+  color: #278282;
+}
+#presentation .card-info .amount {
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+#experts h3 {
+  font-size: 1.4rem;
+}
+#experts .ring {
+  justify-content: space-between;
+  padding: 32px;
+}
+#experts .bg-blue {
+  background-color: #c2d9ff;
+  color: #1c71ff;
+}
+
+#tarifs .tarif {
+  border: 2px solid #efeff0;
+  padding: 32px 8px;
+  text-align: center;
+}
+#tarifs .tarif.recommanded {
+  border: 4px solid #4f91ff;
+}
+#tarifs .tarif.recommanded .recommand {
+  background-color: #ffeacc;
+  color: #FF9800;
+}
+#tarifs .tarif .recommand {
+  display: inline;
+  padding: 0.4rem 1.6rem;
+  height: 38px;
+}
+#tarifs .tarif .title {
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+#tarifs .tarif .sub-title, #tarifs .tarif .infos {
+  height: 2rem;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+#tarifs .tarif .btn-outline-primary.disabled {
+  border-color: #b9b9c0;
+  color: #b9b9c0;
+}
+#tarifs .tarif .btn {
+  padding: 0.4rem 1.6rem;
+}
+#tarifs .tarif .infos {
+  margin-top: 1rem;
+}
+#tarifs .tarif .yearly-price {
+  height: 40px;
+}
+#tarifs .tarif .yearly-price a {
+  color: #f3f6fa;
+}
+#tarifs .tarif hr {
+  opacity: 0.1;
+}
+#tarifs .tarif h4 {
+  margin-left: 0.5rem;
+  opacity: 0.6;
+  text-align: left;
+  margin-top: -0.5rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+#tarifs .tarif ul.includes {
+  padding: 0;
+  margin: 0;
+  margin-left: 2.25rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  text-align: left;
+  list-style-type: none;
+}
+#tarifs .tarif ul.includes li {
+  position: relative;
+}
+#tarifs .tarif ul.includes li:first-child {
+  margin-top: 0.8rem;
+}
+#tarifs .tarif ul.includes li:not(:last-child) {
+  margin-bottom: 0.8rem;
+}
+#tarifs .tarif ul.includes li::before, #tarifs .tarif ul.includes li::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  border-radius: 50px;
+  background-color: #4f91ff;
+}
+#tarifs .tarif ul.includes li::before {
+  width: 12px;
+  left: -1.8rem;
+  top: 0.7rem;
+  transform: rotate(45deg);
+}
+#tarifs .tarif ul.includes li::after {
+  width: 18px;
+  left: -1.5rem;
+  top: 0.58rem;
+  transform: rotate(-45deg);
+}
+#icons {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 48px;
+}
+#icons .iconRow {
+  display: flex;
+  justify-content: space-around;
+  height: 48px;
+  gap: 48px;
+}
+#icons .iconRow .iconBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  height: 48px;
+}
+#icons .iconRow .iconBox .icon {
+  height: 100%;
+  opacity: 0.1;
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+#icons .iconRow .iconBox .icon:hover {
+  opacity: 0.3;
+  transform: scale(1.5);
+}
+
+
+
+.sign-in {
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 32px;
+  box-sizing: border-box;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+#tarifs .tarif .yearly-price a{
+  text-decoration: none;
+  color: rgb(2, 149, 63);
+
+  padding: 10px;
+  border-radius: 5px;
+  
+}
+
+.btn{
+  text-decoration: none;
+  color: white;
+
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btn-light {
+background-color: #4285F4;
+border-color: #4285F4;
+}

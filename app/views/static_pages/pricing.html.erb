@@ -1,0 +1,78 @@
+<h1>Pricing</h1>
+
+<% @pricing = Stripe::Price.list(lookup_keys: ["full_access_year", "full_access_mounth"], expand: ["data.product"])%>
+<% @pricing.each do |price| %>
+<br>
+    <%= price.product.name %>
+    <%= price.id %>
+    <%= price.unit_amount_decimal %>
+    <%= price.currency %>
+    <%= price.recurring.interval %>
+
+<%= link_to "Checkout", checkout_create_path(price: price.id), method: :post, remote: true %>
+      <%# <%= link_to "Pay #{price.unit_amount/100} per #{price.recurring.interval}", checkout_create_path(price: price.id), method: :post, remote: true, data: { disable_with: "validating..."} %> %>
+
+<% end %>
+
+
+ <section class="row mt-5 justify-content-center" id="tarifs">
+        <div class="col-12 col-lg-4 col-xl-3">
+          <div class="tarif">
+            <div class="recommand"></div>
+            <div class="title">Accès limité</div>
+            <div class="sub-title">Gratuit</div>
+            <div class="buy">
+              <div class="btn btn-outline-primary disabled">Démo</div>
+            </div>
+            <div class="infos"></div>
+            <div class="yearly-price"></div>
+            <hr>
+            <h4 class="text-muted">Inclus</h4>
+            <ul class="includes">
+              <li>ciblage illimité</li>
+              <li>Accès aux 5000 filtres</li>
+               <li>generation infini d'échantillon de 100 sociétés </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4 col-xl-3">
+          <div class="tarif recommanded">
+            <div class="recommand">Recommandé</div>
+            <div class="title">Full accès: Abonnement sur 1 an</div>
+            <div class="sub-title"></div>
+            <div class="buy"><a class="btn btn-primary" href="https://buy.stripe.com/test_dR65lpcBy6JAbg46oo">eur 9.99 / mois</a></div>
+            <div class="infos">
+              <p> économisez 50% par rapoort au plan mensuel)</p>
+            </div>
+            <div class="yearly-price"><a class="btn btn-text-primary" href="https://buy.stripe.com/test_dR65lpcBy6JAbg46oo"> 119.99 euros / an</a></div>
+            <hr>
+            <h4 class="text-muted">Inclus</h4>
+            <ul class="includes">
+              <li>Idem à l'abonnement gratuit</li>
+              <li>Téléchargement des fichiers illimités</li>
+              <li>Pas de limite de volume</li>
+              <li>Extra members benefits</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4 col-xl-3">
+          <div class="tarif">
+            <div class="recommand"></div>
+            <div class="title">Accès au mois</div>
+            <div class="sub-title"></div>
+            <div class="buy"><a class="btn btn-outline-primary" href="#">eur 19.99 / mois</a></div>
+            <div class="infos">
+              <p>sur l'année :</p>
+            </div>
+            <div class="yearly-price"><a class="btn btn-text-primary" href="#">eur 240 / an</a></div>
+            <hr>
+            <h4 class="text-muted">Inclus</h4>
+            <ul class="includes">
+              <li>Idem à l'abonnement gratuit</li>
+              <li>Téléchargement des fichiers illimités</li>
+              <li>Pas de limite de volume</li>
+              <li>Extra members benefits</li>
+            </ul>
+          </div>
+        </div>
+      </section>
